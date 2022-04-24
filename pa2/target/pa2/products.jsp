@@ -23,9 +23,9 @@
         <nav>
             <img src="mainlogo.png" alt="logo">
             <ul>
-                <li class = "current"><a href = "index.jsp">Home</a></li>
+                <li><a href = "index.jsp">Home</a></li>
                 <li><a href = "about.jsp">About Our Company</a></li>
-                <li><a href = "products.jsp">Products</a></li>
+                <li class = "current"><a href = "products.jsp">Products</a></li>
                 <li><a href = "checkout.jsp">Check Out</a></li>
             </ul>
             <label id="hamburger">
@@ -34,11 +34,29 @@
         </nav>
     </header>
 
-    <section id="mainintroduction">
-        <div class="about_container">
-            <h1>Welcome to TR Games</h1>
-            <p1>Tenzo and Richard's INF124 Homework Assignment.</p1>
+
+    <div id="productcontainer">
+        <div class="product-cat">
+            <a href = "switch.jsp">
+            <img src="nintendo.png" class="col-1" alt="Nintendo Switch">
+            </a>
         </div>
-    </section>
+        <div class="product-cat">
+            <a href = "playstation.jsp">
+            <img src="playstation.png" class="col-1" alt="Playstation 5">
+            </a>
+        </div>
+        <div class="product-cat">
+            <a href = "xbox.jsp">
+            <img src="xbox.png" class="col-1" alt="Microsoft Xbox">
+            </a>
+        </div>
+        <div class="product-cat">
+            <a href = "windows.jsp">
+            <img src="windows.png" class="col-1" alt="PC Gaming">
+            </a>
+        </div>
+    </div>
+
 </body>
 </html>

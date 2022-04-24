@@ -23,22 +23,17 @@
         <nav>
             <img src="mainlogo.png" alt="logo">
             <ul>
-                <li class = "current"><a href = "index.jsp">Home</a></li>
+                <li><a href = "index.jsp">Home</a></li>
                 <li><a href = "about.jsp">About Our Company</a></li>
                 <li><a href = "products.jsp">Products</a></li>
-                <li><a href = "checkout.jsp">Check Out</a></li>
+                <li class = "current"><a href = "checkout.jsp">Check Out</a></li>
             </ul>
             <label id="hamburger">
                 <i class="fas fa-bars"></i>
             </label>
         </nav>
     </header>
-
-    <section id="mainintroduction">
-        <div class="about_container">
-            <h1>Welcome to TR Games</h1>
-            <p1>Tenzo and Richard's INF124 Homework Assignment.</p1>
-        </div>
-    </section>
+    <h1>Shopping Cart Implementation Coming Soon!</h1>
+    <p1>(Outside the scope of this assignment)</p1>
 </body>
 </html>
