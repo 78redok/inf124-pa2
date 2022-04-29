@@ -18,8 +18,8 @@ import java.sql.SQLException;
 
 
 
-@WebServlet("/nswitch")
-public class nswitch extends HttpServlet
+@WebServlet("/windows")
+public class windows extends HttpServlet
 {
     
 
@@ -33,7 +33,7 @@ public class nswitch extends HttpServlet
         Class.forName("com.mysql.jdbc.Driver");
         Connection con = DriverManager.getConnection("jdbc:mysql:// localhost:3306/" + "game_db", "root", "Mal3k$aM");
         Statement stmt = con.createStatement();
-        String sql = "SELECT * FROM games WHERE platform = 'Switch'";
+        String sql = "SELECT * FROM games WHERE platform = 'Windows'";
         ResultSet rs = stmt.executeQuery(sql);
 
         response.setContentType("text/html");
@@ -45,7 +45,7 @@ public class nswitch extends HttpServlet
         out.println("<div class=\"switchsection\">");
         out.println("<div class=\"cards\">");
         out.println("<div class=\"switch-products\">");
-        out.println("<h1>Nintendo Switch Products</h1></div>");
+        out.println("<h1>PC Products</h1></div>");
         while(rs.next()){                  
         out.println("<div class=\"card\">");
         out.println("<div class=\"image-section\">");
