@@ -62,7 +62,7 @@ public class checkout extends HttpServlet
             int qty = 0;
             out.println("<html lang=\"en\"><head> <meta charset=\"UTF-8\"> <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"> <link rel = \"stylesheet\" href = \"style.css\"> <link rel = \"stylesheet\" href= \"https://pro.fontawesome.com/releases/v5.10.0/css/all.css\"><link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"> <title>Tenzo and Richard's Store</title> <script src=\"https://code.jquery.com/jquery-3.6.0.js\"></script> <script src=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js\"></script> <script> $(document).ready(function(){ $('#hamburger').click(function(){ $('ul').toggleClass('show'); }); });"); 
             
-            out.println("function myFunction(zipcode, name) {" +
+            out.println("function myFunction(zipcode, name, creditname, creditnumber, creditmonth, credityear) {" +
                 "let a = zipcode.toString().length;" +
                 "if(a != 5) {" +
                     "alert(\"Zip Code Must Be 5 Digits.\");" +
@@ -70,8 +70,28 @@ public class checkout extends HttpServlet
                 "var regex = /^[a-zA-Z]+ [a-zA-Z]+$/;" +
                 "var b = name;" +
                 "if(!regex.test(name)){" +
-                    "alert('Invalid name given.');" +
+                   
+                    "alert('Invalid Name Given(No Spaces After Last Name).');" +
                     "return false;}" +
+                "if(!regex.test(creditname)){" +
+                   
+                    "alert('Invalid Credit Card Name Given(No Spaces After Last Name).');" +
+                    "return false;}" +
+                "var cardno = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;" +
+                "if(!creditnumber.value.match(cardno)){" +
+                
+                "alert('Not a Valid Credit Card Number(Must Start w/ 4(Visa Only) and 13/16 Digits)');" +
+                "return false;}" +
+                "var cardmonth = /^[0-9]{2}$/;" +
+                "if(!creditmonth.value.match(cardmonth)){" +
+                
+                "alert('Credit Card Month Must Be 2 Digits.');" +
+                "return false;}" +
+                "var credyear = /^[0-9]{4}$/;" +
+                "if(!credityear.value.match(credyear)){" +
+                
+                "alert('Credit Card Year Must Be 4 Digits.');" +
+                "return false;}" +
                 "}");
             
             out.println(" </script> <link rel=\"icon\" href=\"https://www.nicepng.com/png/full/96-961724_svg-transparent-download-dog-s-by-seng-hoong.png\"></head><body> <header> <nav> <img src=\"mainlogo.png\" alt=\"logo\"> <ul> <li><a href = \"home\">Home</a></li> <li><a href = \"about\">About Our Company</a></li> <li><a href = \"products\">Products</a></li> <li class = \"current\"><a href = \"checkout\">Check Out</a></li> </ul> <label id=\"hamburger\"> <i class=\"fas fa-bars\"></i> </label> </nav> </header>");
@@ -118,7 +138,7 @@ public class checkout extends HttpServlet
                 "<a href=\"#\" class=\"close\">&times;</a>" +
                 "<div class=\"content\">" +
                 "<div class=\"container\">" +
-                "<form id=\"myForm\" name= \"formform\" onsubmit=\"return myFunction(document.getElementById('zipcode').value, document.getElementById('name').value)\" action=\"submitform\" method=\"GET\">" +
+                "<form id=\"myForm\" name= \"formform\" onsubmit=\"return myFunction(document.getElementById('zipcode').value, document.getElementById('name').value, document.getElementById('credit_name2').value, document.formform.credit_num, document.formform.credit_month, document.formform.credit_year)\" action=\"submitform\" method=\"GET\">" +
                 "</id>" +
                 "<input type=\"hidden\" name = \"quantity\" value="+qty+">" +
                 "<input type=\"hidden\" name = \"totprice\" value="+totalprice+">" +
@@ -139,7 +159,7 @@ public class checkout extends HttpServlet
                             "<label>Credit Card Name</label>" +
                             "<input type=\"text\" name = \"credit_name\" id =\"credit_name2\" placeholder = \"Credit Card Name\" required>" +
                             "<label>Card Number</label>" +
-                            "<input type=\"number\" name = \"credit_num\" placeholder = \"Credit Card Number\" required>" +
+                            "<input type=\"text\" name = \"credit_num\" id = \"credit_num2\" placeholder = \"Credit Card Number\" required>" +
                             "<label>Expiration Month</label>" +
                             "<input type=\"number\" name = \"credit_month\" placeholder = \"Expiration Month\" required>" +
                             "<label>Expiration Year</label>" +
