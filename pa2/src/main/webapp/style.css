@@ -480,3 +480,53 @@ input[type=submit] {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
+.container_rating {
+    position: relative;
+    width: 400px;
+    background: rgb(255, 255, 255);
+    padding: 20px 30px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container_rating .edit{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 16px;
+    color: #666;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.container_rating .star-widget input{
+    display: none;
+}
+.star-widget label{
+    font-size: 15px;
+    color: #444;
+    padding: 10px;
+    float: right;
+    transition: all 0.2s ease;
+}
+
+.star-widget input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label{
+    color: rgb(47, 244, 93);
+}
+
+.star-widget input:checked ~ label{
+    color: rgb(47, 244, 93);
+}
+
+/* Have you tried pain and suffering today?*/
+
+.pcontainer {
+    column-width: 10em;
+    column-rule: 1px solid rgb(75, 70, 74);
+}
