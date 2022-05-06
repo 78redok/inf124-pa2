@@ -133,45 +133,143 @@ public class checkout extends HttpServlet
                     }
                 }
 
-            out.println("<br><p1>Total Price: " + totalprice + "</p1>" +
-                "<br></br>" +
-                "<a href=\"#\" class=\"close\">&times;</a>" +
-                "<div class=\"content\">" +
-                "<div class=\"container\">" +
-                "<form id=\"myForm\" name= \"formform\" onsubmit=\"return myFunction(document.getElementById('zipcode').value, document.getElementById('name').value, document.getElementById('credit_name2').value, document.formform.credit_num, document.formform.credit_month, document.formform.credit_year)\" action=\"submitform\" method=\"GET\">" +
-                "</id>" +
-                "<input type=\"hidden\" name = \"quantity\" value="+qty+">" +
-                "<input type=\"hidden\" name = \"totprice\" value="+totalprice+">" +
-                "   <label>Full Name</label>" +
-                            "<input type=\"text\" name = \"full_name\" id = \"name\" placeholder = \"Your Full Name\" required>" +
-                            "<label>Phone Number</label>" +
-                            "<input type=\"text\" name = \"tele\" id = \"tele\" placeholder = \"Phone Number\" required>" +
-                            "<label>Shipping Address</label>" +
-                            "<input type=\"text\" name = \"shipper\" id = \"address\" placeholder = \"Address\" required>" +
-                            "<label>Shipping City</label>" +
-                            "<input type=\"text\" name = \"shipper_city\" placeholder = \"Address City\" required>" +
-                            "<label>Shipping State</label>" +
-                            "<input type=\"text\" name = \"shipper_state\" placeholder = \"Address State\" required>" +
-                            "<label>Zip Code</label>" +
-                            "<input type=\"text\" name = \"zipcode\" placeholder = \"Zip Code\" id = \"zipcode\" required>" +
-                            "<label>E-Mail Address</label>" +
-                            "<input type=\"email\" name = \"email\" id =\"email\" placeholder = \"Email Address\" required>" +
-                            "<label>Credit Card Name</label>" +
-                            "<input type=\"text\" name = \"credit_name\" id =\"credit_name2\" placeholder = \"Credit Card Name\" required>" +
-                            "<label>Card Number</label>" +
-                            "<input type=\"text\" name = \"credit_num\" id = \"credit_num2\" placeholder = \"Credit Card Number\" required>" +
-                            "<label>Expiration Month</label>" +
-                            "<input type=\"number\" name = \"credit_month\" placeholder = \"Expiration Month\" required>" +
-                            "<label>Expiration Year</label>" +
-                            "<input type=\"number\" name = \"credit_year\" placeholder = \"Expiration Year\" required>" +
-                            "<label>Shipping Options</label><br><br>" +
-                            "<input type=\"radio\" id = \"Expedited\" name=\"opt_shipping\" value=\"Expedited Shipping\" required>" +
-                            "<label for =\"Expedited\">Expedited Shipping (1-3 days)</label><br>" +
-                            "<input type=\"radio\" id = \"Standard\" name=\"opt_shipping\" value=\"Standard Shipping\">" +
-                            "<label for =\"Standard\">Standard Shipping (5-7 days)</label><br><br><br>" +
-                            "<p1>Review Your Experience</p1>" +
-                            "<div class=\"container_rating\"> <div class=\"star-widget\"> <input type=\"radio\" name=\"rate\" id=\"rate-5\" value=1> <label for=\"rate-5\" class=\"fa fa-star\"></label> <input type=\"radio\" name=\"rate\" id=\"rate-4\" value=2> <label for=\"rate-4\" class=\"fa fa-star\"></label> <input type=\"radio\" name=\"rate\" id=\"rate-3\" value=3> <label for=\"rate-3\" class=\"fa fa-star\"></label> <input type=\"radio\" name=\"rate\" id=\"rate-2\" value=4> <label for=\"rate-2\" class=\"fa fa-star\"></label> <input type=\"radio\" name=\"rate\" id=\"rate-1\" value=5> <label for=\"rate-1\" class=\"fa fa-star\"></label><br><br> </div> </div>" +
-                            "<input type=\"submit\" value=\"Submit\"></form></div></div></div></div>");
+            out.println("<p>Total Price: totalprice </p> " + 
+            "<br /> " + 
+            "<a href='#' class='close'>&times;</a> " + 
+            "<div class='content'> " + 
+            "  <div class='container'> " + 
+            "    <form " + 
+            "      id='myForm' " + 
+            "      name='formform' " + 
+            "      onsubmit=\"return myFunction(document.getElementById('zipcode').value, document.getElementById('name').value, document.getElementById('credit_name2').value, document.formform.credit_num, document.formform.credit_month, document.formform.credit_year)' \"" + 
+            "      action='submitform' " + 
+            "      method='GET' " + 
+            "    > " + 
+            "      <input type='hidden' name='quantity' value="+qty+" /> " + 
+            "      <input type='hidden' name='totprice' value="+totalprice+" /> " + 
+            "      <label>Full Name</label> " + 
+            "      <input " + 
+            "        type='text' " + 
+            "        name='full_name' " + 
+            "        id='name' " + 
+            "        placeholder='Your Full Name' " + 
+            "        required " + 
+            "      /> " + 
+            "      <label>Phone Number</label> " + 
+            "      <input " + 
+            "        type='text' " + 
+            "        name='tele' " + 
+            "        id='tele' " + 
+            "        placeholder='Phone Number' " + 
+            "        required " + 
+            "      /> " + 
+            "      <label>Shipping Address</label> " + 
+            "      <input " + 
+            "        type='text' " + 
+            "        name='shipper' " + 
+            "        id='address' " + 
+            "        placeholder='Address' " + 
+            "        required " + 
+            "      /> " + 
+            "      <label>Shipping City</label> " + 
+            "      <input " + 
+            "        type='text' " + 
+            "        name='shipper_city' " + 
+            "        placeholder='Address City' " + 
+            "        required " + 
+            "      /> " + 
+            "      <label>Shipping State</label> " + 
+            "      <input " + 
+            "        type='text' " + 
+            "        name='shipper_state' " + 
+            "        placeholder='Address State' " + 
+            "        required " + 
+            "      /> " + 
+            "      <label>Zip Code</label> " + 
+            "      <input " + 
+            "        type='text' " + 
+            "        name='zipcode' " + 
+            "        placeholder='Zip Code' " + 
+            "        id='zipcode' " + 
+            "        required " + 
+            "      /> " + 
+            "      <label>E-Mail Address</label> " + 
+            "      <input " + 
+            "        type='email' " + 
+            "        name='email' " + 
+            "        id='email' " + 
+            "        placeholder='Email Address' " + 
+            "        required " + 
+            "      /> " + 
+            "      <label>Credit Card Name</label> " + 
+            "      <input " + 
+            "        type='text' " + 
+            "        name='credit_name' " + 
+            "        id='credit_name2' " + 
+            "        placeholder='Credit Card Name' " + 
+            "        required " + 
+            "      /> " + 
+            "      <label>Card Number</label> " + 
+            "      <input " + 
+            "        type='text' " + 
+            "        name='credit_num' " + 
+            "        id='credit_num2' " + 
+            "        placeholder='Credit Card Number' " + 
+            "        required " + 
+            "      /> " + 
+            "      <label>Expiration Month</label> " + 
+            "      <input " + 
+            "        type='number' " + 
+            "        name='credit_month' " + 
+            "        placeholder='Expiration Month' " + 
+            "        required " + 
+            "      /> " + 
+            "      <label>Expiration Year</label> " + 
+            "      <input " + 
+            "        type='number' " + 
+            "        name='credit_year' " + 
+            "        placeholder='Expiration Year' " + 
+            "        required " + 
+            "      /> " + 
+            "      <label>Shipping Options</label><br /><br /> " + 
+            "      <input " + 
+            "        type='radio' " + 
+            "        id='Expedited' " + 
+            "        name='opt_shipping' " + 
+            "        value='Expedited Shipping' " + 
+            "        required " + 
+            "      /> " + 
+            "      <label for='Expedited'>Expedited Shipping (1-3 days)</label><br /> " + 
+            "      <input " + 
+            "        type='radio' " + 
+            "        id='Standard' " + 
+            "        name='opt_shipping' " + 
+            "        value='Standard Shipping' " + 
+            "      /> " + 
+            "      <label for='Standard'>Standard Shipping (5-7 days)</label> " + 
+            "      <br /><br /><br /> " + 
+            "      <p>Review Your Experience</p> " + 
+            "      <div class='container_rating'> " + 
+            "        <div class='star-widget'> " + 
+            "          <input type='radio' name='rate' id='rate-5' value='1' /> " + 
+            "          <label for='rate-5' class='star'><i class='fa fa-star'></i></label> " + 
+            "          <input type='radio' name='rate' id='rate-4' value='2' /> " + 
+            "          <label for='rate-4' class='star'><i class='fa fa-star'></i></label> " + 
+            "          <input type='radio' name='rate' id='rate-3' value='3' /> " + 
+            "          <label for='rate-3' class='star'><i class='fa fa-star'></i></label> " + 
+            "          <input type='radio' name='rate' id='rate-2' value='4' /> " + 
+            "          <label for='rate-2' class='star'><i class='fa fa-star'></i></label> " + 
+            "          <input type='radio' name='rate' id='rate-1' value='5' /> " + 
+            "          <label for='rate-1' class='star'><i class='fa fa-star'></i></label> " + 
+            "          <br /><br /> " + 
+            "          <br /><br /> " + 
+            "        </div> " + 
+            "      </div> " + 
+            "       <br /><br /> " + 
+            "      <input type='submit' value='Submit' /> " + 
+            "    </form> " + 
+            "  </div> " + 
+            "</div></div></div>" );
 
                         }
         catch(ClassNotFoundException e){
@@ -186,9 +284,6 @@ public class checkout extends HttpServlet
 
  
     }
-
-
-
 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
