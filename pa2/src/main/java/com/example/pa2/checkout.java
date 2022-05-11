@@ -82,7 +82,7 @@ public class checkout extends HttpServlet
                 
                 "alert('Not a Valid Credit Card Number(Must Start w/ 4(Visa Only) and 13/16 Digits)');" +
                 "return false;}" +
-                "var cardmonth = /^[0-9]{2}$/;" +
+                "var cardmonth = /^[0-9]{2}$/;" + 
                 "if(!creditmonth.value.match(cardmonth)){" +
                 
                 "alert('Credit Card Month Must Be 2 Digits.');" +
@@ -92,6 +92,7 @@ public class checkout extends HttpServlet
                 
                 "alert('Credit Card Year Must Be 4 Digits.');" +
                 "return false;}" +
+
                 "}");
             
             out.println(" </script> <link rel=\"icon\" href=\"https://www.nicepng.com/png/full/96-961724_svg-transparent-download-dog-s-by-seng-hoong.png\"></head><body> <header> <nav> <img src=\"mainlogo.png\" alt=\"logo\"> <ul> <li><a href = \"home\">Home</a></li> <li><a href = \"about\">About Our Company</a></li> <li><a href = \"products\">Products</a></li> <li class = \"current\"><a href = \"checkout\">Check Out</a></li> </ul> <label id=\"hamburger\"> <i class=\"fas fa-bars\"></i> </label> </nav> </header>");
@@ -133,7 +134,7 @@ public class checkout extends HttpServlet
                     }
                 }
 
-            out.println("<p>Total Price: totalprice </p> " + 
+            out.println("<p>Total Price:"+totalprice+" </p> " + 
             "<br /> " + 
             "<a href='#' class='close'>&times;</a> " + 
             "<div class='content'> " + 
@@ -141,7 +142,7 @@ public class checkout extends HttpServlet
             "    <form " + 
             "      id='myForm' " + 
             "      name='formform' " + 
-            "      onsubmit=\"return myFunction(document.getElementById('zipcode').value, document.getElementById('name').value, document.getElementById('credit_name2').value, document.formform.credit_num, document.formform.credit_month, document.formform.credit_year)' \"" + 
+            "      onsubmit=\"return myFunction(document.getElementById('zipcode').value, document.getElementById('name').value, document.getElementById('credit_name2').value, document.formform.credit_num, document.formform.credit_month, document.formform.credit_year)\"" + 
             "      action='submitform' " + 
             "      method='GET' " + 
             "    > " + 
@@ -251,15 +252,15 @@ public class checkout extends HttpServlet
             "      <p>Review Your Experience</p> " + 
             "      <div class='container_rating'> " + 
             "        <div class='star-widget'> " + 
-            "          <input type='radio' name='rate' id='rate-5' value='1' /> " + 
+            "          <input type='radio' name='rate' id='rate-5' value='5' /> " + 
             "          <label for='rate-5' class='star'><i class='fa fa-star'></i></label> " + 
-            "          <input type='radio' name='rate' id='rate-4' value='2' /> " + 
+            "          <input type='radio' name='rate' id='rate-4' value='4' /> " + 
             "          <label for='rate-4' class='star'><i class='fa fa-star'></i></label> " + 
             "          <input type='radio' name='rate' id='rate-3' value='3' /> " + 
             "          <label for='rate-3' class='star'><i class='fa fa-star'></i></label> " + 
-            "          <input type='radio' name='rate' id='rate-2' value='4' /> " + 
+            "          <input type='radio' name='rate' id='rate-2' value='2' /> " + 
             "          <label for='rate-2' class='star'><i class='fa fa-star'></i></label> " + 
-            "          <input type='radio' name='rate' id='rate-1' value='5' /> " + 
+            "          <input type='radio' name='rate' id='rate-1' value='1' /> " + 
             "          <label for='rate-1' class='star'><i class='fa fa-star'></i></label> " + 
             "          <br /><br /> " + 
             "          <br /><br /> " + 
